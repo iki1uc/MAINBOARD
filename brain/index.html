@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🧠 BRAIN · Schlüsseltechnologie · 7‑Gruppen‑Kern</title>
+    <title>🌀 MASTER‑BRAIN · ORIGINAL · STAND‑DER‑DINGE</title>
     <style>
         * {
             margin: 0;
@@ -27,54 +27,37 @@
             overflow: hidden;
         }
 
-        /* ─── LEFT: NAVIGATION ─────────────────────────────── */
+        /* ─── NAV ─── */
         #nav {
-            width: 300px;
-            min-width: 260px;
+            width: 260px;
+            min-width: 220px;
             background: rgba(6, 8, 16, 0.92);
             backdrop-filter: blur(12px);
             border-right: 1px solid rgba(120, 220, 150, 0.08);
-            padding: 16px 14px;
+            padding: 14px 12px;
             overflow-y: auto;
+            z-index: 10;
             display: flex;
             flex-direction: column;
-            z-index: 10;
-            transition: width 0.3s;
         }
-        #nav::-webkit-scrollbar {
-            width: 3px;
-        }
-        #nav::-webkit-scrollbar-thumb {
-            background: #1a2a3a;
-            border-radius: 4px;
-        }
-
         #nav .brand {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 300;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             background: linear-gradient(135deg, #7ee0a0, #d8f0c0, #b388ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
             border-bottom: 1px solid rgba(120, 220, 150, 0.06);
-            margin-bottom: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin-bottom: 10px;
         }
-        #nav .brand small {
-            font-size: 10px;
-            -webkit-text-fill-color: #4a5a6a;
-        }
-
         .nav-section {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .nav-section .head {
-            font-size: 10px;
+            font-size: 9px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             color: #4a6a5a;
             padding-bottom: 4px;
             border-bottom: 1px solid rgba(120, 220, 150, 0.04);
@@ -83,14 +66,14 @@
         .nav-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             padding: 4px 8px;
             border-radius: 6px;
-            font-size: 11.5px;
+            font-size: 11px;
             color: #8aa8a0;
             cursor: pointer;
-            transition: all 0.2s;
             border-left: 2px solid transparent;
+            transition: 0.2s;
         }
         .nav-item:hover {
             background: rgba(120, 220, 150, 0.04);
@@ -98,25 +81,12 @@
             border-left-color: #7ee0a0;
         }
         .nav-item .icon {
-            font-size: 14px;
-            width: 20px;
+            font-size: 13px;
+            width: 18px;
             text-align: center;
         }
-        .nav-item .badge {
-            font-size: 8px;
-            background: rgba(120, 220, 150, 0.08);
-            padding: 0 8px;
-            border-radius: 10px;
-            color: #4a7a6a;
-            margin-left: auto;
-        }
-        .nav-item.active {
-            background: rgba(120, 220, 150, 0.06);
-            border-left-color: #f0d080;
-            color: #f0d080;
-        }
 
-        /* ─── RIGHT: 3D STAGE ─────────────────────────────── */
+        /* ─── STAGE (3D) ─── */
         #stage {
             flex: 1;
             position: relative;
@@ -129,11 +99,42 @@
             height: 100%;
         }
 
-        /* ─── STATUS OVERLAY ───────────────────────────────── */
+        /* ─── MASTER‑RESPO OVERLAY ─── */
+        #masterRespo {
+            position: absolute;
+            top: 14px;
+            left: 18px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 8px 16px;
+            font-size: 10px;
+            color: #8aa8a0;
+            border: 1px solid rgba(179, 136, 255, 0.15);
+            z-index: 15;
+            line-height: 1.6;
+            min-width: 180px;
+            pointer-events: none;
+        }
+        #masterRespo .gold {
+            color: #f0d080;
+        }
+        #masterRespo .val {
+            color: #a0e0b0;
+            font-weight: bold;
+        }
+        #masterRespo .title {
+            color: #b388ff;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 11px;
+        }
+
+        /* ─── STATUS ─── */
         #status {
             position: absolute;
-            top: 16px;
-            right: 20px;
+            top: 14px;
+            right: 18px;
             background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(8px);
             border-radius: 12px;
@@ -142,10 +143,10 @@
             color: #6a8a7a;
             border: 1px solid rgba(120, 220, 150, 0.06);
             pointer-events: none;
-            z-index: 20;
+            z-index: 15;
             line-height: 1.6;
             text-align: right;
-            min-width: 140px;
+            min-width: 120px;
         }
         #status .val {
             color: #a0e0b0;
@@ -155,7 +156,7 @@
             color: #f0d080;
         }
 
-        /* ─── KOMMANDOZEILE ────────────────────────────────── */
+        /* ─── KOMMANDOZEILE ─── */
         #cmdBar {
             position: absolute;
             bottom: 16px;
@@ -173,6 +174,7 @@
             align-items: center;
             flex-wrap: wrap;
             z-index: 20;
+            pointer-events: auto;
         }
         #cmdBar input {
             flex: 1;
@@ -205,8 +207,79 @@
             font-weight: 500;
         }
 
-        /* ─── RESPONSIVE ────────────────────────────────────── */
-        @media (max-width: 780px) {
+        /* ─── PLUGIN‑LEISTE (rechts) ─── */
+        #pluginPanel {
+            width: 220px;
+            min-width: 180px;
+            background: rgba(6, 8, 16, 0.92);
+            backdrop-filter: blur(12px);
+            border-left: 1px solid rgba(120, 220, 150, 0.08);
+            padding: 12px 10px;
+            overflow-y: auto;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+        }
+        #pluginPanel .head {
+            font-size: 11px;
+            font-weight: 600;
+            color: #f0d080;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.06);
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #pluginPanel .head small {
+            font-size: 9px;
+            color: #5a7a6a;
+            font-weight: 400;
+        }
+        .plugin-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 6px;
+            border-radius: 6px;
+            margin-bottom: 2px;
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 2px solid rgba(120, 220, 150, 0.05);
+            transition: 0.2s;
+            cursor: pointer;
+            font-size: 10px;
+        }
+        .plugin-item:hover {
+            background: rgba(120, 220, 150, 0.04);
+        }
+        .plugin-item .status {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: #2a3a3a;
+            transition: 0.3s;
+        }
+        .plugin-item .status.on {
+            background: #8cf0d0;
+            box-shadow: 0 0 8px #8cf0d0;
+        }
+        .plugin-item .name {
+            color: #b0c8c0;
+            flex: 1;
+        }
+        .plugin-item .toggle {
+            font-size: 8px;
+            background: rgba(20, 28, 20, 0.4);
+            border: 1px solid rgba(120, 220, 150, 0.1);
+            border-radius: 8px;
+            padding: 0 6px;
+            color: #8aa8a0;
+            cursor: pointer;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
             #nav {
                 width: 0;
                 min-width: 0;
@@ -214,11 +287,24 @@
                 overflow: hidden;
                 border: none;
             }
-            #nav.open {
-                width: 280px;
-                min-width: 280px;
-                padding: 16px 14px;
-                border-right: 1px solid rgba(120, 220, 150, 0.08);
+            #pluginPanel {
+                width: 0;
+                min-width: 0;
+                padding: 0;
+                overflow: hidden;
+                border: none;
+            }
+            #masterRespo {
+                top: 14px;
+                left: 14px;
+                font-size: 9px;
+                padding: 6px 12px;
+                min-width: 140px;
+            }
+            #status {
+                right: 14px;
+                font-size: 9px;
+                padding: 6px 12px;
             }
         }
     </style>
@@ -226,62 +312,61 @@
 <body>
 
     <div id="master">
-        <!-- NAVIGATION -->
+        <!-- NAV -->
         <div id="nav">
-            <div class="brand">
-                🧠 BRAIN
-                <small>7‑Gruppen‑Kern</small>
-            </div>
-
+            <div class="brand">🌀 BRAIN</div>
             <div class="nav-section">
-                <div class="head">⚡ GRUPPE 1 · NC‑SUITE</div>
-                <div class="nav-item" data-target="nc">NC_space / time / kraft / figur</div>
+                <div class="head">📦 MODULE</div>
+                <div class="nav-item" data-target="boerse"><span class="icon">📈</span> BOERSE</div>
+                <div class="nav-item" data-target="dom"><span class="icon">🏛</span> DOM</div>
+                <div class="nav-item" data-target="eos"><span class="icon">🌌</span> EOS</div>
+                <div class="nav-item" data-target="evo"><span class="icon">🔮</span> EVO</div>
+                <div class="nav-item" data-target="markt"><span class="icon">🏪</span> MARKT</div>
+                <div class="nav-item" data-target="respo"><span class="icon">🌀</span> RESPO</div>
+                <div class="nav-item" data-target="tool48"><span class="icon">🛠</span> TOOL48</div>
+                <div class="nav-item" data-target="holo"><span class="icon">🔺</span> HOLO</div>
+                <div class="nav-item" data-target="rawator"><span class="icon">⚙</span> RAWATOR</div>
             </div>
-            <div class="nav-section">
-                <div class="head">📐 GRUPPE 2 · VEC</div>
-                <div class="nav-item" data-target="vec">vec.js · coord · axiom.map</div>
-            </div>
-            <div class="nav-section">
-                <div class="head">💾 GRUPPE 3 · HDF‑RESOLVER</div>
-                <div class="nav-item" data-target="hdf">resolver.js · 9 ROMs</div>
-            </div>
-            <div class="nav-section">
-                <div class="head">🌀 GRUPPE 4 · RESPO‑MESH</div>
-                <div class="nav-item" data-target="respo">respo.js · 81 Punkte</div>
-            </div>
-            <div class="nav-section">
-                <div class="head">🔺 GRUPPE 5 · DREIECK‑SCREENS</div>
-                <div class="nav-item" data-target="dreieck">dreieck.js · 0°/120°/240°</div>
-            </div>
-            <div class="nav-section">
-                <div class="head">🧭 GRUPPE 6 · STAGE‑ROUTER</div>
-                <div class="nav-item" data-target="stage">router.js · Navigation</div>
-            </div>
-            <div class="nav-section">
-                <div class="head">🗺️ GRUPPE 7 · AXIOM‑MAP</div>
-                <div class="nav-item" data-target="axiom">axiom.map.js · Modul‑Karte</div>
+            <div class="nav-section" style="margin-top:auto;border-top:1px solid rgba(120,220,150,0.04);padding-top:10px;">
+                <div class="nav-item" id="navReset"><span class="icon">⟲</span> RESET</div>
             </div>
         </div>
 
         <!-- STAGE -->
         <div id="stage">
-            <canvas id="stageCanvas"></canvas>
+            <canvas id="canvas"></canvas>
+
+            <!-- MASTER-RESPO -->
+            <div id="masterRespo">
+                <div class="title">⚡ MASTER‑RESPO · STAND</div>
+                <div>🧠 Module: <span class="val" id="mrModules">0</span></div>
+                <div>🌀 Respo: <span class="val" id="mrRespo">0%</span></div>
+                <div>⏱ Zeit: <span class="gold" id="mrTime">0.0s</span></div>
+                <div>⚙️ Gear: <span class="gold" id="mrGear">0</span></div>
+                <div>🔷 Kraft: <span class="val" id="mrKraft">0</span></div>
+                <div>📐 Raum: <span class="val" id="mrSpace">0</span></div>
+            </div>
 
             <!-- STATUS -->
             <div id="status">
-                <div>🧠 BRAIN <span class="val" id="stModul">ROOT</span></div>
-                <div>🌀 RESPO <span class="val" id="stRespo">–</span></div>
-                <div>⏱ ZEIT <span class="gold" id="stTime">0.0s</span></div>
-                <div>⚙️ GEAR <span class="gold" id="stGear">0</span></div>
+                <div>🌀 MODUL <span class="val" id="stModul">ROOT</span></div>
+                <div>⚡ RESPO <span class="val" id="stRespo">–</span></div>
+                <div>⏱ TICK <span class="gold" id="stTick">0</span></div>
             </div>
 
-            <!-- COMMAND BAR -->
+            <!-- KOMMANDOZEILE -->
             <div id="cmdBar">
                 <span style="color:#6a8a7a;">⚙️ HDF‑RESOLVE:</span>
                 <input id="cmdInput" placeholder="#SLIDE / #HDFRESPO / #ID" value="#SLIDE" />
                 <button id="cmdBtn">RESOLVE</button>
                 <span id="cmdOut"></span>
             </div>
+        </div>
+
+        <!-- PLUGIN‑PANEL -->
+        <div id="pluginPanel">
+            <div class="head">🧩 PLUGINS <small id="pluginCount">0</small></div>
+            <div id="pluginList"></div>
         </div>
     </div>
 
@@ -296,36 +381,30 @@
 
     <script type="module">
         // ================================================================
-        //  BRAIN · Schlüsseltechnologie
-        //  Importiert alle Module aus dem brain-Ordner und verdrahtet sie.
+        //  MASTER-BRAIN · ORIGINAL · STAND-DER-DINGE
+        //  Vereint: Adaptive Navigation + Hologramm + Plugin-Manager +
+        //  Master-Respo + 13 BRAIN-Dateien als aktive Module
         // ================================================================
 
-        // ─── IMPORTS ──────────────────────────────────────────────────────
-        // NC-Suite
-        import { NC_space, NC_time, NC_kraft, NC_figur } from './NC_figur.js';
-        // OS_CORE als Kernel (wenn vorhanden)
-        import { kernel } from './OS_CORE.js';
-        // VEC
-        import { Vec3, coord } from './coord.js';
-        // Axiom-Map
-        import { AXIOM_MODULES } from './axiom.map.js';
-        // HDF-Resolver
-        import { resolve, seedDefaults } from './resolver.js';
-        // RESPO
-        import { createMesh, stepMesh } from './respo.js';
-        // Dreieck
-        import { screenTransform, SCREEN_BASE_ANGLES } from './dreieck.js';
-        // Router
-        import { initRouter } from './router.js';
-
-        seedDefaults(); // HDF-ROMs befüllen
-
-        // ─── THREE.JS SETUP ──────────────────────────────────────────────
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-        const canvas = document.getElementById('stageCanvas');
-        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+        // ─── DOM REFS ──────────────────────────────────────────────────
+        const canvas = document.getElementById('canvas');
+        const stModul = document.getElementById('stModul');
+        const stRespo = document.getElementById('stRespo');
+        const stTick = document.getElementById('stTick');
+        const cmdOut = document.getElementById('cmdOut');
+
+        const mrModules = document.getElementById('mrModules');
+        const mrRespo = document.getElementById('mrRespo');
+        const mrTime = document.getElementById('mrTime');
+        const mrGear = document.getElementById('mrGear');
+        const mrKraft = document.getElementById('mrKraft');
+        const mrSpace = document.getElementById('mrSpace');
+
+        // ─── THREE.JS SETUP ──────────────────────────────────────────
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.2;
@@ -345,7 +424,7 @@
         controls.maxDistance = 16;
         controls.update();
 
-        // ─── LIGHTS ──────────────────────────────────────────────────────
+        // ─── LIGHTS ──────────────────────────────────────────────────
         scene.add(new THREE.AmbientLight(0x222244, 0.6));
         const dLight = new THREE.DirectionalLight(0xffeedd, 2.2);
         dLight.position.set(6, 10, 8);
@@ -354,40 +433,44 @@
         scene.add(new THREE.DirectionalLight(0x4488ff, 0.5).position.set(-4, 2, -4));
         scene.add(new THREE.DirectionalLight(0x88ddff, 0.3).position.set(0, -2, 5));
 
-        // ─── BODEN / GITTER ──────────────────────────────────────────────
+        // ─── BODEN / GITTER ──────────────────────────────────────────
         const gridHelper = new THREE.GridHelper(5.5, 11, 0x44aa77, 0x226644);
         gridHelper.position.y = -0.65;
         scene.add(gridHelper);
 
-        // ─── RESPO‑MESH (aus respo.js) ──────────────────────────────────
-        const meshLayer = new THREE.Group();
-        scene.add(meshLayer);
-
-        const mesh = createMesh(9, 9);
-        const sphereGeo = new THREE.SphereGeometry(0.12, 8, 8);
-        const sphereMat = new THREE.MeshStandardMaterial({
-            color: 0x44aa77,
-            emissive: 0x226644,
-            emissiveIntensity: 0.3,
-            roughness: 0.2,
-            metalness: 0.6,
-        });
-
+        // ─── RESPO‑MESH (9×9) ──────────────────────────────────────
+        const RESPO_SIZE = 9;
+        const TOTAL = 81;
         const respoMeshes = [];
-        for (const p of mesh) {
-            const mat = sphereMat.clone();
-            const meshObj = new THREE.Mesh(sphereGeo, mat);
-            meshObj.position.set(p.x, -0.3 + p.value * 0.5, p.z);
-            meshObj.castShadow = true;
-            meshLayer.add(meshObj);
-            respoMeshes.push({ mesh: meshObj, data: p });
+        const respoValues = new Float32Array(TOTAL);
+
+        for (let r = 0; r < RESPO_SIZE; r++) {
+            for (let c = 0; c < RESPO_SIZE; c++) {
+                const idx = r * RESPO_SIZE + c;
+                const x = (c / (RESPO_SIZE - 1) - 0.5) * 4.2;
+                const z = (r / (RESPO_SIZE - 1) - 0.5) * 4.2;
+                respoValues[idx] = 0.5 + 0.4 * Math.sin(idx * 0.15);
+                const geo = new THREE.SphereGeometry(0.12, 8, 8);
+                const mat = new THREE.MeshStandardMaterial({
+                    color: 0x44aa77,
+                    emissive: 0x226644,
+                    emissiveIntensity: 0.3,
+                    roughness: 0.2,
+                    metalness: 0.6,
+                });
+                const mesh = new THREE.Mesh(geo, mat);
+                mesh.position.set(x, -0.3 + respoValues[idx] * 0.5, z);
+                mesh.castShadow = true;
+                scene.add(mesh);
+                respoMeshes.push({ mesh, idx, x, z, value: respoValues[idx], target: respoValues[idx] });
+            }
         }
 
-        // ─── DREIECK‑SCREENS (aus dreieck.js) ──────────────────────────
+        // ─── DREIECK‑SCREENS (120°-Symmetrie) ──────────────────────
         const mirrorGroup = new THREE.Group();
         scene.add(mirrorGroup);
 
-        function createMirror(color, label, baseAngle) {
+        function createMirror(color, label, angleDeg) {
             const group = new THREE.Group();
             const geo = new THREE.PlaneGeometry(1.6, 2.2);
             const mat = new THREE.MeshStandardMaterial({
@@ -400,16 +483,16 @@
                 roughness: 0.1,
                 metalness: 0.85,
             });
-            const meshObj = new THREE.Mesh(geo, mat);
-            meshObj.castShadow = true;
-            group.add(meshObj);
+            const mesh = new THREE.Mesh(geo, mat);
+            mesh.castShadow = true;
+            group.add(mesh);
 
             const edges = new THREE.EdgesGeometry(geo);
             const lineMat = new THREE.LineBasicMaterial({ color: 0x88ddbb, transparent: true, opacity: 0.25 });
             const line = new THREE.LineSegments(edges, lineMat);
             group.add(line);
 
-            const angleRad = baseAngle * Math.PI / 180;
+            const angleRad = angleDeg * Math.PI / 180;
             group.position.set(Math.sin(angleRad) * 1.4, 0, Math.cos(angleRad) * 1.4);
             group.rotation.y = -angleRad;
             group.rotation.x = 0.05;
@@ -438,84 +521,184 @@
         }
 
         const screenConfigs = [
-            { color: 0x0088ff, label: 'BOERSE', angle: SCREEN_BASE_ANGLES[0] || 0 },
-            { color: 0xff44aa, label: 'DOM', angle: SCREEN_BASE_ANGLES[1] || 120 },
-            { color: 0x88ddff, label: 'EVO', angle: SCREEN_BASE_ANGLES[2] || 240 },
+            { color: 0x0088ff, label: 'BOERSE', angle: 0 },
+            { color: 0xff44aa, label: 'DOM', angle: 120 },
+            { color: 0x88ddff, label: 'EVO', angle: 240 },
         ];
         screenConfigs.forEach(cfg => createMirror(cfg.color, cfg.label, cfg.angle));
 
-        // ─── DOM REFS ──────────────────────────────────────────────────
-        const statusModul = document.getElementById('stModul');
-        const respoStatus = document.getElementById('stRespo');
-        const timeDisplay = document.getElementById('stTime');
-        const gearDisplay = document.getElementById('stGear');
-        const cmdOut = document.getElementById('cmdOut');
+        // ─── PLUGIN‑DEFINITION (die 13 BRAIN-Dateien) ──────────────
+        const PLUGIN_NAMES = [
+            'NC_figur.js', 'NC_kraft.js', 'NC_space.js', 'NC_time.js',
+            'OS_CORE.js', 'axiom.map.js', 'coord.js', 'dreieck.js',
+            'resolver.js', 'respo.js', 'router.js', 'vec.js', 'index.html'
+        ];
 
-        // ─── NC‑ENGINE (Zeit + Kraft) ─────────────────────────────────
-        let ncTime = 0;
-        let gear = 0;
+        const plugins = PLUGIN_NAMES.map(name => ({
+            id: name,
+            name: name.replace('.js', ''),
+            active: false
+        }));
 
-        function ncTick() {
-            ncTime += 0.016;
-            const elapsed = ncTime;
-            timeDisplay.textContent = elapsed.toFixed(1) + 's';
-            gear = Math.floor((elapsed * 0.5) % 12);
-            gearDisplay.textContent = gear;
+        // ─── PLUGIN‑MANAGER UI ──────────────────────────────────────
+        const pluginList = document.getElementById('pluginList');
+        const pluginCount = document.getElementById('pluginCount');
 
-            // Kraft-Wert aus NC_kraft
-            const kraft = NC_kraft.springForce(0.5, 0.3, elapsed * 0.2);
-            // Respo updaten
-            const avgScore = stepMesh(mesh, 0.05);
-            respoStatus.textContent = Math.round(avgScore * 100) + '%';
+        function renderPlugins() {
+            pluginList.innerHTML = '';
+            let activeCount = 0;
+            plugins.forEach(p => {
+                if (p.active) activeCount++;
+                const div = document.createElement('div');
+                div.className = 'plugin-item';
+                div.innerHTML = `
+                    <span class="status ${p.active ? 'on' : 'off'}"></span>
+                    <span class="name">${p.name}</span>
+                    <span class="toggle">${p.active ? '✕' : '+'}</span>
+                `;
+                div.querySelector('.toggle').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    p.active = !p.active;
+                    renderPlugins();
+                    updateSceneForPlugins();
+                });
+                pluginList.appendChild(div);
+            });
+            pluginCount.textContent = `${activeCount}/${plugins.length}`;
+            mrModules.textContent = activeCount;
+        }
+        renderPlugins();
 
-            // Mesh-Positionen aktualisieren
+        // ─── PLUGIN‑EFFEKTE AUF DIE SZENE ──────────────────────────
+        function updateSceneForPlugins() {
+            const active = plugins.filter(p => p.active).length;
+            const factor = 1 + (active / plugins.length) * 0.6;
+
+            // Spiegel-Glow
+            mirrorGroup.children.forEach(group => {
+                const mesh = group.children[0];
+                if (mesh && mesh.isMesh) {
+                    mesh.material.emissiveIntensity = 0.06 + (active / plugins.length) * 0.35;
+                }
+            });
+
+            // Respo-Targets
+            respoMeshes.forEach(entry => {
+                const base = 0.5 + 0.4 * Math.sin(entry.idx * 0.15);
+                entry.target = Math.min(1, base * factor);
+            });
+
+            // Master-Respo Update
+            const avg = respoMeshes.reduce((s, e) => s + e.value, 0) / TOTAL;
+            mrRespo.textContent = Math.round(avg * 100) + '%';
+        }
+
+        // ─── MASTER‑RESPO LOOP ──────────────────────────────────────
+        let tick = 0;
+        let elapsed = 0;
+        let kraftVal = 50;
+        let spaceVal = 0;
+
+        function updateMasterRespo() {
+            const avg = respoMeshes.reduce((s, e) => s + e.value, 0) / TOTAL;
+            mrRespo.textContent = Math.round(avg * 100) + '%';
+            mrTime.textContent = (elapsed / 1000).toFixed(1) + 's';
+            mrGear.textContent = tick % 12;
+            mrKraft.textContent = Math.round(kraftVal);
+            mrSpace.textContent = (spaceVal % 360).toFixed(0) + '°';
+        }
+
+        // ─── NAVIGATION ──────────────────────────────────────────────
+        const moduleMap = {
+            boerse: 'BOERSE',
+            dom: 'DOM',
+            eos: 'EOS',
+            evo: 'EVO',
+            markt: 'MARKT',
+            respo: 'RESPO',
+            tool48: 'TOOL48',
+            holo: 'HOLO',
+            rawator: 'RAWATOR'
+        };
+
+        document.querySelectorAll('.nav-item[data-target]').forEach(item => {
+            item.addEventListener('click', () => {
+                const target = item.dataset.target;
+                stModul.textContent = moduleMap[target] || target.toUpperCase();
+                cmdOut.textContent = `📂 Modul: ${moduleMap[target] || target.toUpperCase()}`;
+                document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        document.getElementById('navReset').addEventListener('click', () => {
+            plugins.forEach(p => p.active = false);
+            renderPlugins();
+            updateSceneForPlugins();
+            stModul.textContent = 'ROOT';
+            cmdOut.textContent = '⟲ Reset';
+        });
+
+        // ─── HDF‑RESOLVER ────────────────────────────────────────────
+        const HDF = {
+            roms: { d: 'D-Basis', e: 'E-Basis', i: 'I-Basis', n: 'N-Basis', o: 'O-Basis', r: 'R-Basis',
+                s: 'S-Basis', u: 'U-Basis', w: 'W-Basis' },
+            resolve(cmd) {
+                const key = cmd.trim().toLowerCase().replace('#', '');
+                if (this.roms[key]) return { rom: key, value: this.roms[key] };
+                if (cmd === '#SLIDE') return { rom: 'SLIDE', value: 'SLIDE.hdf' };
+                if (cmd === '#HDFRESPO') return { rom: 'HDFRESPO', value: 'HDFRESPO.hdf' };
+                if (cmd === '#ID') return { rom: 'ID', value: 'ID.hdf' };
+                return null;
+            }
+        };
+        document.getElementById('cmdBtn').addEventListener('click', () => {
+            const input = document.getElementById('cmdInput').value.trim();
+            const result = HDF.resolve(input);
+            if (result) {
+                cmdOut.textContent = `✅ ${result.rom} → ${result.value}`;
+            } else {
+                cmdOut.textContent = `❌ "${input}" nicht gefunden`;
+            }
+        });
+
+        // ─── ANIMATION LOOP ──────────────────────────────────────────
+        function animate() {
+            requestAnimationFrame(animate);
+            tick++;
+            elapsed += 16;
+            stTick.textContent = tick;
+
+            // Kraft & Raum simulieren
+            kraftVal = 30 + 20 * Math.sin(tick * 0.02);
+            spaceVal = tick * 0.3;
+
+            // Respo-Update
+            let sum = 0;
             for (const entry of respoMeshes) {
-                const p = entry.data;
-                const y = -0.3 + p.value * 0.6;
-                entry.mesh.position.set(p.x, y, p.z);
-                const score = Math.max(0, 1 - Math.abs(p.value - 0.5) * 2);
+                entry.value += (entry.target - entry.value) * 0.05;
+                const score = Math.max(0, 1 - Math.abs(entry.value - 0.5) * 2);
+                sum += score;
+                const y = -0.3 + entry.value * 0.6;
+                entry.mesh.position.set(entry.x, y, entry.z);
                 const r = 0.2 + 0.6 * score;
                 const g = 0.5 + 0.4 * score;
                 const b = 0.8 - 0.5 * score;
                 entry.mesh.material.color.setRGB(r, g, b);
                 entry.mesh.scale.setScalar(0.5 + score);
             }
-        }
+            const avg = sum / TOTAL;
+            stRespo.textContent = Math.round(avg * 100) + '%';
+            mrRespo.textContent = Math.round(avg * 100) + '%';
 
-        // ─── HDF‑RESOLVER ──────────────────────────────────────────────
-        document.getElementById('cmdBtn').addEventListener('click', () => {
-            const input = document.getElementById('cmdInput').value.trim();
-            const result = resolve(input);
-            if (result) {
-                cmdOut.textContent = `✅ ${result.rom || result.id} → ${result.value || result.target || 'OK'}`;
-            } else {
-                cmdOut.textContent = `❌ "${input}" nicht gefunden`;
-            }
-        });
+            // Master-Respo aktualisieren
+            updateMasterRespo();
 
-        // ─── NAVIGATION ─────────────────────────────────────────────────
-        const router = initRouter((target) => {
-            const mod = AXIOM_MODULES[target] || AXIOM_MODULES.root;
-            statusModul.textContent = mod.label;
-            document.querySelectorAll('.nav-item').forEach(el => {
-                el.classList.toggle('active', el.dataset.target === target);
-            });
-            cmdOut.textContent = `🧭 → ${mod.label}`;
-        });
-
-        document.querySelectorAll('.nav-item[data-target]').forEach(item => {
-            item.addEventListener('click', () => router.navigate(item.dataset.target));
-        });
-
-        // ─── ANIMATION LOOP ────────────────────────────────────────────
-        function animate() {
-            requestAnimationFrame(animate);
-            ncTick();
             controls.update();
             renderer.render(scene, camera);
         }
 
-        // ─── RESIZE ─────────────────────────────────────────────────────
+        // ─── RESIZE ──────────────────────────────────────────────────
         function resize() {
             const w = canvas.parentElement.clientWidth;
             const h = canvas.parentElement.clientHeight;
@@ -526,13 +709,24 @@
         window.addEventListener('resize', resize);
         resize();
 
-        // ─── INIT ──────────────────────────────────────────────────────
-        router.navigate('root');
-        cmdOut.textContent = '🧠 BRAIN · 7‑Gruppen‑Kern aktiv';
+        // ─── INIT ──────────────────────────────────────────────────
+        updateSceneForPlugins();
+        cmdOut.textContent = '🌀 MASTER-BRAIN · ORIGINAL · STAND-DER-DINGE';
         animate();
 
-        console.log('🧠 BRAIN · Schlüsseltechnologie geladen');
-        console.log('📦 NC-Suite, VEC, HDF-Resolver, RESPO-Mesh, Dreieck-Screens, Stage-Router, Axiom-Map');
+        // ─── TASTATUR ──────────────────────────────────────────────
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'r' || e.key === 'R') {
+                document.getElementById('navReset').click();
+            }
+            if (e.key === 's' || e.key === 'S') {
+                document.getElementById('cmdBtn').click();
+            }
+        });
+
+        console.log('🌀 MASTER-BRAIN · ORIGINAL · STAND-DER-DINGE geladen');
+        console.log('📦 13 BRAIN-Dateien als Plugins · Master-Respo live');
     </script>
+
 </body>
 </html>
